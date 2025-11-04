@@ -1,0 +1,33 @@
+{
+  "name": "final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+
+  "scripts": {
+    "clean": "npx rimraf cypress/allure-results cypress/allure-report",
+    "test": "npx cypress run",
+    "allure:generate": "allure generate cypress/allure-results --clean -o cypress/allure-report",
+    "allure:open": "allure open cypress/allure-report",
+    "test:allure": "npm run clean & npm run test & npm run allure:generate & npm run allure:open",
+    "test:allure:fast": "npm run clean & npm run test & npm run allure:generate & Start-Process \"cypress/allure-report/index.html\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.7",
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.34.1",
+    "cypress": "^15.5.0",
+    "cypress-xpath": "^2.0.1",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.3.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
