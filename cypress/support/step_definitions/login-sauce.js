@@ -2,7 +2,7 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor'
 
 Given('user is on the login page', () => {
-  cy.visit('/')
+  cy.visit('https://www.saucedemo.com')
 })
 
 When('user enters {string} and {string}', (username, password) => {

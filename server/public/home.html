@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 40px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      margin: 20px auto;
+      width: 80%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: dodgerblue;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: dodgerblue;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Home Page 🎉</h1>
+
+  <table id="user-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- dữ liệu sẽ được thêm bằng JS -->
+    </tbody>
+  </table>
+
+  <a href="/">Logout</a>
+
+  <script src="home.js"></script>
+</body>
+</html>

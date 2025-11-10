@@ -15,7 +15,7 @@ Feature: Login_Logout Functionality
       | invalid_user@tma.com | wrongPass    | Invalid username or password            |
       | abc                  | wrongPass    | Invalid username or password            |
       |                      |              | Email is required, Password is required |
-
+  @smoke
   Scenario: Logout successfully
     Given the user has logged in successfully
     When clicks the logout button

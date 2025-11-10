@@ -1,9 +1,7 @@
-// cypress/e2e/api-express.cy.js
 describe('API testing', () => {
   const API_URL = 'http://localhost:4000'
 
-  // TEST 1: Login thành công
-  it('POST /api/login → 200 + trả về user', () => {
+  it('Login success', () => {
     cy.request('POST', `${API_URL}/api/login`, {
       username: 'admin',
       password: '123456'
@@ -18,8 +16,7 @@ describe('API testing', () => {
     })
   })
 
-  // TEST 2: Login thất bại
-  it('POST /api/login → 401 khi sai mật khẩu', () => {
+  it('Login fail', () => {
     cy.request({
       method: 'POST',
       url: `${API_URL}/api/login`,
@@ -32,13 +29,12 @@ describe('API testing', () => {
     })
   })
 
-  // TEST 3: GET /api/users → 200 + danh sách
-  it('GET /api/users → 200 + 3 người', () => {
+  it('Get user list', () => {
     cy.request('GET', `${API_URL}/api/users`)
       .then((response) => {
         expect(response.status).to.eq(200)
         expect(response.body).to.have.length(3)
-        expect(response.body[0]).to.have.property('firstName', 'Rachel')
+        expect(response.body[0]).to.have.property('name', 'Alice')
       })
   })
 

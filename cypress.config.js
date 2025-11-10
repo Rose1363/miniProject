@@ -8,9 +8,13 @@ const {
 } = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 const allureWriter = require('@shelex/cypress-allure-plugin/writer')
 module.exports = defineConfig({
+  env: {
+    USERNAME: "123",
+    PASSWORD: "222",
+  },
   e2e: {
     // specPattern: "**/*.f
-    baseUrl: "https://www.saucedemo.com", // QUAN TRỌNG: để /inventory.html hoạt động
+    // baseUrl: "https://www.saucedemo.com", // QUAN TRỌNG: để /inventory.html hoạt động
     // specPattern: "**/*.cy.js",
     specPattern: ["**/*.feature", "**/*.cy.js"],
 
@@ -30,7 +34,7 @@ module.exports = defineConfig({
     // },
     env: {
       allure: true,
-      allureResultsPath: 'cypress/allure-results' // Đảm bảo đường dẫn
+      allureResultsPath: 'cypress/allure-results'
     },
     async setupNodeEvents(on, config) {
       allureWriter(on, config)

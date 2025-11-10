@@ -1,8 +1,8 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import 'cypress-xpath';
 // import 'cypress-mochawesome-reporter/cucumberSupport';
-const username = Cypress.env('USERNAME')
-const password = Cypress.env('PASSWORD')
+const username = "ntntram@tma.com.vn"
+const password = "Fpw10@2@2025"
 
 Given('the user is on the home page', () => {
     cy.visit('https://t-learning-dc29.tmainnovation.vn');
@@ -24,9 +24,9 @@ When('enters {string} and {string}', (username, password) => {
 
 Then('the system should display {string}', (expectedResult) => {
   if (expectedResult === 'Home page displayed') {
-    cy.contains('p.avatar-color', 'Tram Nguyen', { timeout: 10000 }).should('be.visible');
+    cy.contains('p.avatar-color', 'Tram Nguyen').should('be.visible');
   } else if (expectedResult === 'Invalid username or password') {
-    cy.contains('Invalid username or password', { timeout: 10000 }).should('be.visible');
+    cy.contains('Invalid username or password').should('be.visible');
   } else if (expectedResult === 'Email is required, Password is required') {
     cy.xpath('//small[@class="msg-required"]/span')
       .should('contain.text', 'Email is required')
@@ -45,7 +45,7 @@ Given('the user has logged in successfully', () => {
     cy.xpath('//input[@id="email"]').type(username);
     cy.xpath('//input[@id="password"]').type(password);
     cy.xpath('//input[@id="kc-login"]').click();
-    cy.contains('p.avatar-color', 'Tram Nguyen', { timeout: 10000 }).should('be.visible');
+    cy.contains('p.avatar-color', 'Tram Nguyen').should('be.visible');
 });
 
 

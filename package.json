@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
   "scripts": {
     "clean": "npx rimraf cypress/allure-results cypress/allure-report",
     "test": "npx cypress run",
     "allure:generate": "allure generate cypress/allure-results --clean -o cypress/allure-report",
     "allure:open": "allure open cypress/allure-report",
     "test:allure": "npm run clean & npm run test & npm run allure:generate & npm run allure:open",
-    "test:allure:fast": "npm run clean & npm run test & npm run allure:generate & Start-Process \"cypress/allure-report/index.html\""
+    "test:allure:fast": "npm run clean & npm run test & npm run allure:generate & Start-Process \"cypress/allure-report/index.html\" & npm run allure:open"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +27,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "papaparse": "^5.5.3"
   }
 }
